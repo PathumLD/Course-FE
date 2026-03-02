@@ -26,7 +26,7 @@ export default function App() {
       />
       <Route
         path="/register"
-        element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <RegisterPage />}
+        element={isAuthenticated ? <Navigate to="/login" replace /> : <RegisterPage />}
       />
 
       {/* Protected routes */}

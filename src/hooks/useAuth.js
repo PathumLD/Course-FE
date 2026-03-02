@@ -25,15 +25,13 @@ export const useLogin = () => {
 }
 
 export const useRegister = () => {
-  const { setAuth } = useAuthStore()
   const navigate = useNavigate()
 
   return useMutation({
     mutationFn: authApi.register,
     onSuccess: (data) => {
-      setAuth(data)
-      toast.success(`Account created! Welcome, ${data.username}!`)
-      navigate('/dashboard')
+      toast.success(`Account created! Please sign in, ${data.username}.`)
+      navigate('/login')
     },
     onError: (error) => {
       const msg =
